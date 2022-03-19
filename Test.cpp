@@ -20,11 +20,6 @@ TEST_CASE("Bad input"){
     CHECK_THROWS(n.erase(-1,5,100,Direction::Horizontal, 200));
     CHECK_THROWS(n.show(-5));
     CHECK_THROWS(n.show(-2312));
-    CHECK_THROWS(n.show(-2312));
-    CHECK_THROWS(n.show(-2312));
-    CHECK_THROWS(n.show(-2312));
-    CHECK_THROWS(n.show(-2312));
-    CHECK_THROWS(n.show(-2312));
 }
 
 TEST_CASE("Good input"){
@@ -39,4 +34,16 @@ TEST_CASE("Good input"){
     n.write(10,0,0,Direction::Vertical, "BOB");
     CHECK(n.read(10,0,0,Direction::Horizontal, 3) == "B__");
     CHECK(n.read(10,0,0,Direction::Vertical, 3) == "BOB");
+    n.erase(10,0,0, Direction::Horizontal,3);
+    CHECK(n.read(10,0,0,Direction::Vertical, 3) == "~~~");
+    n.write(10,0,0,Direction::Vertical, "BOB");
+    n.erase(10,0,0, Direction::Vertical,3);
+    CHECK(n.read(10,0,0,Direction::Horizontal, 3) == "~OB");
+    n.erase(10,0,1, Direction::Vertical,1);
+    CHECK(n.read(10,0,0,Direction::Horizontal, 3) == "~~B");
+    CHECK(n.read(10,56,31,Direction::Horizontal, 6) == "~~~~~~");
+    
+    
+
+
 }
