@@ -1,30 +1,27 @@
 #include "Notebook.hpp"
 #include "Direction.hpp"
 using ariel::Direction;
-
 #include <iostream>
 #include <stdexcept>
 using namespace std;
+using namespace ariel;
 
-class ariel::Notebook{
-private:
-    char ***notebook;
-public:
-
-Notebook(){
+Notebook::Notebook(){
   
 }
 
-void write(int page, int row, int col, Direction dir, string s){
+void Notebook::write(int page, int row, int col, Direction dir, std::string s){
     return;
 }
-string read(int page, int row, int col, Direction dir, int len){
+
+string Notebook::read(int page, int row, int col, Direction dir, int len){
     return "";
 }
-void erase(int page, int row, int col, Direction dir, int len){
+
+void Notebook::erase(int page, int row, int col, Direction dir, int len){
     return;
 }
-void show(int page){
+void Notebook::show(int page){
     return;
 }
-};
+
