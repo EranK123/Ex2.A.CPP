@@ -10,7 +10,7 @@ Notebook::Notebook(){
   
 }
 
-void Notebook::write(int page, int row, int col, Direction dir, std::string s){
+void Notebook::write(int page, int row, int col, Direction dir, string const & s){
     
 }
 
